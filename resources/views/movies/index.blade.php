@@ -1,14 +1,16 @@
-<!doctype html>
-<html>
-    <head>
-        <title> All films </title>
-    </head>
-    <body>
+@extends('layouts.master')
+
+@section('title')
+    IMDB 
+@endsection
+
+@section('content')
 <ul>
     @foreach($movies as $movie)
-        <li><a href="{{ route('single-movie', ['id'=> $movie->id ]) }}">{{ $movie->title }}</a></li>
+        <li><a href="{{ route('single-movie', ['id'=> $movie->id ]) }}">{{ $movie->title }}</a>
         <p>{{ $movie->storyline }}</p>
+        </li>
     @endforeach
 </ul>   
-    </body>
-</html>
+  
+@endsection
